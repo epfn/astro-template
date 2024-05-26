@@ -1,0 +1,23 @@
+{
+    "name": "astro-template",
+    "type": "module",
+    "version": "0.0.1",
+    "scripts": {
+        "dev": "astro dev",
+        "start": "astro dev",
+        "build": "astro check && astro build",
+        "preview": "astro preview",
+        "astro": "astro"
+    },
+    "dependencies": {
+        "@astrojs/check": "^0.7.0",
+        "astro": "^4.9.1",
+        "astro-relative-links": "^0.3.9",
+        "typescript": "^5.4.5"
+    },
+    "devDependencies": {
+        "@types/canvas-confetti": "^1.6.4",
+        "concurrently": "^8.2.2",
+        "sass": "^1.77.2"
+    }
+}
