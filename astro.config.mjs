@@ -7,6 +7,7 @@ export default defineConfig({
   integrations: [relativeLinks()],
   trailingSlash: "never",
   devToolbar: { enabled: false },
+  outDir: "build",
   build: {
     format: "file",
     inlineStylesheets: "never",

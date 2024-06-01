@@ -5,12 +5,12 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "astro check && astro build && npm run format",
+    "build": "npm run sass-build && astro check && astro build && npm run format",
     "preview": "astro preview",
     "astro": "astro",
     "sass-watch": "sass --watch public/scss/style.scss public/css/style.css",
     "sass-build": "sass public/scss/style.scss public/css/style.css",
-    "format": "npx prettier dist --write"
+    "format": "npx prettier build --write --log-level silent"
   },
   "dependencies": {
     "@astrojs/check": "^0.7.0",
