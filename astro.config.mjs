@@ -1,5 +1,6 @@
 import { defineConfig } from "astro/config";
 import relativeLinks from "astro-relative-links";
+import { run } from "vite-plugin-run";
 
 // https://astro.build/config
 export default defineConfig({
@@ -13,19 +14,6 @@ export default defineConfig({
   compressHTML: false,
   scopedStyleStrategy: "class",
   vite: {
-    css: {
-      devSourcemap: true,
-    },
-    build: {
-      cssCodeSplit: false,
-      rollupOptions: {
-        output: {
-          assetFileNames: (assetInfo) => {
-            if (assetInfo.name.includes("css")) return "css/style.css";
-            return "_astro/[name]-[hash][extname]";
-          },
-        },
-      },
-    },
+    plugins: [run([{ name: "sass", run: ["npm run sass-watch"] }])],
   },
 });
