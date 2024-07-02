@@ -84,3 +84,21 @@ $fluid-screen: 1920px;
     --container-width: 100%;
   }
 }
+
+@mixin laptop {
+  @media (max-width: $breakpoint-lg) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (max-width: $breakpoint-md) {
+    @content;
+  }
+}
+
+@mixin phone {
+  @media (max-width: $breakpoint-sm) {
+    @content;
+  }
+}
