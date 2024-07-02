@@ -36,3 +36,16 @@ const version = String(Date.now()).substring(5);
     <script is:inline src=`/js/script.js?v=0.${version}` defer></script>
   </body>
 </html>
+
+<style is:global lang="scss">
+  html {
+    height: 100%;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+</style>
