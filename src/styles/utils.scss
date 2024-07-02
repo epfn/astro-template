@@ -60,7 +60,7 @@ $fluid-screen: 1920px;
 }
 
 @mixin section {
-  --container-width: $container-lg;
+  --container-width: #{$container-lg};
 
   display: grid;
   grid-template-columns:
