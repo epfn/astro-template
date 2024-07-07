@@ -1,9 +1,18 @@
 {
+  "plugins": ["prettier-plugin-astro"],
   "overrides": [
     {
       "files": "*.html",
       "options": {
         "printWidth": 300,
+        "bracketSameLine": true,
+        "htmlWhitespaceSensitivity": "ignore"
+      }
+    },
+    {
+      "files": "*.astro",
+      "options": {
+        "parser": "astro",
         "bracketSameLine": true,
         "htmlWhitespaceSensitivity": "ignore"
       }
