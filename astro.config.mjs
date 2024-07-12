@@ -37,7 +37,7 @@ export default defineConfig({
       modules: false,
       preprocessorOptions: {
         scss: {
-          additionalData: '@import "./src/styles/utils.scss";',
+          additionalData: '@import "./src/styles/mixins.scss";',
         },
       },
     },

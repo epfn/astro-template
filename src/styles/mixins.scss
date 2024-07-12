@@ -4,7 +4,7 @@ $breakpoint-lg: 992px;
 $breakpoint-md: 768px;
 $breakpoint-sm: 576px;
 
-$container-lg: 1300px;
+$container-lg: 1306px;
 $container-md: 920px;
 $container-sm: 640px;
 
@@ -99,6 +99,18 @@ $fluid-screen: 1920px;
 
 @mixin phone {
   @media (max-width: $breakpoint-sm) {
+    @content;
+  }
+}
+
+@mixin hover {
+  @media (hover: hover) {
+    @content;
+  }
+}
+
+@mixin no-hover {
+  @media (hover: none) {
     @content;
   }
 }
