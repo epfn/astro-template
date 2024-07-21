@@ -5,7 +5,7 @@ import fancybox from "@fancyapps/ui/dist/fancybox/fancybox.css?url";
 import accordion from "accordion-js/dist/accordion.css?url";
 import choices from "choices.js/public/assets/styles/choices.min.css?url";
 import tippy from "tippy.js/dist/tippy.css?url";
-import datepicker from 'air-datepicker/air-datepicker.css?url';
+import datepicker from "air-datepicker/air-datepicker.css?url";
 
 interface Props {
   title: string;
@@ -33,6 +33,8 @@ const version = String(Date.now()).substring(5);
   </head>
   <body>
     <slot />
+    <!-- <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" defer></script> -->
+    <!-- <script is:inline src="/js/map.js" defer></script> -->
     <script is:inline src=`/js/custom-script.js?v=0.${version}` defer></script>
   </body>
 </html>
