@@ -1,4 +1,4 @@
-# Astro Template Markup
+# Astro Template PHP
 
 ## Для работы с проектом установите
 
