@@ -27,8 +27,8 @@ await Promise.all(
     let headings = head.querySelectorAll("link");
 
     let style = headings[headings.length - 1];
-    if (style.getAttribute("href") === "./css/style.css") {
-      style.setAttribute("href", `./css/style.css?v=0.${dateNow}`);
+    if (style.getAttribute("href") === "./css/custom-style.css") {
+      style.setAttribute("href", `./css/custom-style.css?v=0.${dateNow}`);
     }
 
     let script = head.querySelector("script");

@@ -13,7 +13,6 @@ export default defineConfig({
     inlineStylesheets: "never",
     assets: "js/bundle",
   },
-  // compressHTML: false,
   scopedStyleStrategy: "class",
   vite: {
     build: {
@@ -24,6 +23,7 @@ export default defineConfig({
         output: {
           hashCharacters: "hex",
           assetFileNames: ({ name }) => {
+            if (name.includes("style")) return "css/custom-style.css";
             if (name.includes("css")) return "css/[name].css";
             if (name.includes("js")) return "js/name-[hash].js";
             return "other/[name]-[hash][extname]";

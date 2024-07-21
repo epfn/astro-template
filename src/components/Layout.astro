@@ -33,7 +33,7 @@ const version = String(Date.now()).substring(5);
   </head>
   <body>
     <slot />
-    <script is:inline src=`/js/script.js?v=0.${version}` defer></script>
+    <script is:inline src=`/js/custom-script.js?v=0.${version}` defer></script>
   </body>
 </html>
 
