@@ -1,5 +1,6 @@
 import { defineConfig } from "astro/config";
 import relativeLinks from "astro-relative-links";
+import { run } from "vite-plugin-run";
 import FullReload from "vite-plugin-full-reload";
 
 // https://astro.build/config
@@ -11,36 +12,13 @@ export default defineConfig({
   build: {
     format: "file",
     inlineStylesheets: "never",
-    assets: "js/bundle",
   },
+  compressHTML: false,
   scopedStyleStrategy: "class",
   vite: {
-    build: {
-      assetsInlineLimit: 0,
-      cssCodeSplit: false,
-      minify: false,
-      rollupOptions: {
-        output: {
-          hashCharacters: "hex",
-          assetFileNames: ({ name }) => {
-            if (name.includes("style")) return "css/custom-style.css";
-            if (name.includes("css")) return "css/[name].css";
-            if (name.includes("js")) return "js/name-[hash].js";
-            return "other/[name]-[hash][extname]";
-          },
-          entryFileNames: "js/entry/[name]-[hash].js",
-        },
-      },
-    },
-    css: {
-      devSourcemap: true,
-      modules: false,
-      preprocessorOptions: {
-        scss: {
-          additionalData: '@import "./src/styles/mixins.scss";',
-        },
-      },
-    },
-    plugins: [FullReload(["public/js/**/*.js"])],
+    plugins: [
+      run([{ name: "sass", run: ["npm run sass-watch"] }]),
+      FullReload(["public/scss/**/*.scss", 'public/js/**/*.js']),
+    ],
   },
 });

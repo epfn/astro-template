@@ -1,17 +1,9 @@
 ---
-import normalize from "../styles/normalize.css?url";
-import swiper from "swiper/swiper-bundle.css?url";
-import fancybox from "@fancyapps/ui/dist/fancybox/fancybox.css?url";
-import accordion from "accordion-js/dist/accordion.css?url";
-import choices from "choices.js/public/assets/styles/choices.min.css?url";
-import tippy from "tippy.js/dist/tippy.css?url";
-import datepicker from 'air-datepicker/air-datepicker.css?url';
-
 interface Props {
-  title: string;
+  title?: string;
 }
 
-const { title } = Astro.props;
+const { title = "Заголовок" } = Astro.props;
 
 const version = String(Date.now()).substring(5);
 ---
@@ -20,32 +12,25 @@ const version = String(Date.now()).substring(5);
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
-    <title>{title}</title>
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <!-- <link rel="stylesheet" href={swiper} /> -->
-    <!-- <link rel="stylesheet" href={fancybox} /> -->
-    <!-- <link rel="stylesheet" href={accordion} /> -->
-    <!-- <link rel="stylesheet" href={choices} /> -->
-    <!-- <link rel="stylesheet" href={tippy} /> -->
-    <!-- <link rel="stylesheet" href={datepicker} /> -->
+    <link rel="icon" type="image/svg+xml" href="/icon.svg" />
+    <!-- <link rel="stylesheet" href="/plugins/air-datepicker/air-datepicker.css" /> -->
+    <!-- <link rel="stylesheet" href="/plugins/accordion/accordion.min.css" /> -->
+    <!-- <link rel="stylesheet" href="/plugins/fancybox/fancybox.css" /> -->
+    <!-- <link rel="stylesheet" href="/plugins/select2/select2.min.css" /> -->
     <!-- <link rel="stylesheet" href="/fonts/icomoon/style.css" /> -->
-    <link rel="stylesheet" href={normalize} />
+    <link rel="stylesheet" href=`/css/style.css?v=0.${version}` />
+    <title>{title}</title>
   </head>
   <body>
     <slot />
-    <script is:inline src=`/js/custom-script.js?v=0.${version}` defer></script>
+    <!-- <script is:inline src="/plugins/jquery-3.7.1.min.js" defer></script> -->
+    <!-- <script is:inline src="/plugins/air-datepicker/air-datepicker.js" defer></script> -->
+    <!-- <script is:inline src="/plugins/imask/imask.js" defer></script> -->
+    <!-- <script is:inline src="/plugins/fancybox/fancybox.umd.js" defer></script> -->
+    <!-- <script is:inline src="/plugins/select2/select2.min.js" defer></script> -->
+    <!-- <script is:inline src="/plugins/accordion/accordion.min.js" defer></script> -->
+    <!-- <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" defer></script> -->
+    <!-- <script is:inline src="/js/map.js" defer></script> -->
+    <script is:inline src=`/js/script.js?v=0.${version}` defer></script>
   </body>
 </html>
-
-<style is:global lang="scss">
-  html {
-    height: 100%;
-    scroll-behavior: smooth;
-  }
-
-  body {
-    min-height: 100%;
-    display: flex;
-    flex-direction: column;
-  }
-</style>
