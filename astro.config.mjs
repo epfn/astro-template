@@ -28,7 +28,10 @@ export default defineConfig({
             if (name.includes("js")) return "js/name-[hash].js";
             return "other/[name]-[hash][extname]";
           },
-          entryFileNames: "js/entry/[name]-[hash].js",
+          entryFileNames: ({ name }) => {
+            if (name.includes("hoisted")) return "js/entry/[name]-[hash].js";
+            return "js/entry/[name].js";
+          },
         },
       },
     },
