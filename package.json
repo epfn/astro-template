@@ -15,7 +15,7 @@
     "@fancyapps/ui": "^5.0.36",
     "accordion-js": "^3.3.4",
     "air-datepicker": "^3.5.3",
-    "astro": "^4.13.1",
+    "astro": "^4.14.2",
     "astro-relative-links": "^0.4.0",
     "choices.js": "^10.2.0",
     "imask": "^7.6.1",
